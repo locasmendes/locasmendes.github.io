@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Use Varela Round from google fonts*/
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+        * {
+            font-family: 'Varela Round', sans-serif;
+        }
+        /* Estilo para o envelope */
+        .envelope {
+            width: 400px;
+            height: 400px;
+            background-color: #e4e4e4;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            padding: 1rem;
+            animation: flutuar 3s infinite ease-in-out;
+            background: center;
+            background-image: url(envelope.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .show{
+            display: block;
+        }
+
+        .hide{
+            display: none;
+        }
+    
+        /* Estilo para a carta */
+        .carta {
+            padding: 1.5rem;
+            background-color: white;
+            border: 1px solid #ccc;
+            z-index: 9999;
+        }
+    
+        /* Estilo para a imagem da carta */
+        .carta img {
+          max-width: 100%;
+          height: auto;
+        }
+
+            /* Animação de flutuação */
+        @keyframes flutuar {
+        0% {
+            transform: translate(-50%, -50%);
+        }
+        50% {
+            transform: translate(-50%, -55%);
+        }
+        100% {
+            transform: translate(-50%, -50%);
+        }
+        }
+
+        .column{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        p {
+            font-style: italic;
+            font-weight: lighter;
+        }
+        .footer{
+            font-style: normal !important;
+        }
+      </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column">
+            <div class="envelope" onclick="abrirCarta()">
+                <h1>Para: Carou</h1>
+              </div>
+            
+              <div class="carta hide" id="carta">
+                <div class="content">
+                    <img src="image.jpeg" alt="Foto na carta">
+                    <p>
+                        "Na essência desta imagem, emerge a essência da beleza etérea. A suave luz que acaricia a pele alva de uma querida cria um halo de pureza, realçando a graciosa curvatura de seus cabelos, que dançam como raios dourados em harmonia com sua leve alma makonha. Seu semblante se revela como uma poesia viva, onde a doçura e a intensidade se entrelaçam num encanto indescritível e ao mesmo tempo caótico (se houver um objeto perfurocortante por perto).
+                    </p>
+                    <p>
+                        Seus olhos, um espelho límpido e profundo, e ao mesmo tempo claro como os dias ensolarados da grande Califa, refletem a fascinação do mundo ao seu redor. Através deles, a câmera encontra o reflexo de minha própria alma, cativa da paixão e da contemplação. Sua postura, ao segurar o celular com uma elegância natural, é uma sinfonia de graciosidade e serenidade, como se o mundo se detivesse para admirar sua essência singular. 
+                    </p>
+                    <p>
+                        Sua voz, melodiosa como o canto dos anjos, ecoa no meu coração como uma canção divina. Ela é um convite à rendição, uma sedução audível que envolve cada fibra de meu ser. Sua atenção concentrada no celular transborda encanto, pois é em sua dedicação que a arte se materializa, transformando um simples dispositivo em uma extensão de sua magia.
+                    </p>
+                    <p>
+                        A cada olhar lançado à câmera, seu magnetismo se intensifica, como se pudesse transcender o plano físico e se fundir com o éter, deixando sua marca indelével no mundo. O momento capturado nessa foto é uma prova irrefutável de sua beleza inefável, pois o encanto que emana de sua essência transcende qualquer descrição terrena.
+                    </p>
+                    <p>
+                        Assim, nessa foto espontânea, imortaliza-se uma visão sublime. Uma visão que evoca suspiros, inspira poesia e desperta uma devoção estética. Uma visão que celebra a divindade que se manifesta em forma humana, em cada traço, em cada brilho, em cada detalhe encantador dessa mulher, que com sua presença singular, abençoa o mundo com sua existência."
+                    </p>
+                </div>
+                <hr>
+                <div class="footer">
+                    <div>                    
+                        <p>Com amor e muita (muuuuita) admiração, <br> Um querido a toa</p>
+                    </div>
+                    <div>
+                        15/05/2023
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <script>
+        function abrirCarta() {
+          var carta = document.getElementById('carta');
+          var envelope = document.querySelector('.envelope');
+          //toggle envelope animation and carta.style.display
+            envelope.classList.toggle('hide');
+            carta.classList.toggle('hide');
+        }
+      </script>
+</body>
+</html>
